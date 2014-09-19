@@ -2,14 +2,14 @@ pyshrunk
 ========
 A URL shortener using Redis.
 
-Python code should be written for _Python 2.7_.
+Python code should be written for _Python 3.3_.
 
 Virtual Environment
 -------------------
 Python dependencies are enumerated in `pip.req`. You can set up an appropriate
 virtual environment with the following:
 
-    $ virtualenv --no-site-packages --python="python2.7" virtualenv
+    $ virtualenv --no-site-packages --python="python3" virtualenv
     $ source virtualenv/bin/activate
     $ pip install -r pip.req
 
