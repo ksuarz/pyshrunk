@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/shrunk.css">
+</head>
+<body>
+    <div class="container">
+	<div class="navbar navbar-fixed-top">
+	    <div class="logo">
+		Rutgers University
+	    </div>
+	    <div class="title">
+		Shrunk	
+	    </div>
+	</div>
+
+	<div class="login">
+	    <div class="login-hero">
+		Welcome to Shrunk
+	    </div>
+
+	    <div class="login-subtitle">
+		Log in to continue	
+	    </div>
+
+	    <form class="login-form" method="post" action="ldap-auth/auth.php">
+		<input id='netid_input' type="text" name="netid" placeholder="Net ID" />
+		<input type="password" name="passwd" placeholder="Password"/>
+		<input class='button round' type="submit" value="Log in" /><br />
+	    </form>
+	</div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

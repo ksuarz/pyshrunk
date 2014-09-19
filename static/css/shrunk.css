@@ -1,0 +1,135 @@
+html, body {
+    font-size: 100%;
+}
+body {
+    color: #222;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.container {
+}
+.navbar {
+    height: 55px;
+    background-color: #D21033;
+    position: top;
+}
+
+.left-nav > * {
+    float: left;
+}
+
+
+.navbar .search input {
+    margin: 15px 0 0 35px;
+    float: left;
+    font-size: 24px;
+    width: 33%;
+    border: 0;
+    background-color: #D21033;
+}
+
+.navbar .search input:focus {
+    outline: 0;
+}
+
+.right-nav > * {
+    float: right;
+}
+
+.logout {
+    margin: 15px 35px 0 15px;
+    font-weight: bold;
+}
+
+.logo {
+    float: left;
+    margin: 15px 0 0 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.title {
+    float: left;
+    margin: 18px 0 0 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.login {
+    width: 768px;
+    min-height: 600px;
+    padding: 15px;
+    margin: 35px auto 0;
+    background-color: #FEFAFB;
+    border: black; 
+}
+
+.login-hero {
+    width: 70%;
+    margin: 95px auto 25px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-subtitle {
+    font-size: 24px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login-form > * {
+    display: block;
+    width: 100%;
+    line-height: 150%;
+    margin: 15px auto;
+    font-size: 18px;
+}
+
+
+.app {
+    width: 768px;
+    min-height: 600px;
+    padding: 15px;
+    margin: 85px auto 0;
+    background-color: #FEFAFB;
+    border: black; 
+}
+
+.item {
+    cursor: pointer;
+    height: 150px;
+}
+
+.item .longurl {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.item .longurl a {
+    text-decoration: none;
+    color: black;
+}
+.item .longurl a:hover {
+    color: blue;
+}
+
+.item .date {
+    float: left;
+}
+
+.item .view-count {
+    float: right;
+}
