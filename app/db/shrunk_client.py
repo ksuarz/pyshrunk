@@ -20,14 +20,32 @@ class ShrunkClient(object):
           - `host` (optional): hostname or IP address of the database to connect
              to.  If none is specified, defaults to localhost.
           - `port` (optional): port number to connect to. If none is specified,
-             defaults to 6737.
+             defaults to 6379.
         """
         self.host = host if host is not None else "localhost"
         self.port = port if port is not None else 6737
+        self.redis = redis.StrictRedis(host=host, port=port)
 
     def create_short_url(self, long_url, netid=None):
         """Given a long URL, create a new short URL. """
-        raise NotImplementedError
+        short_url  = ShrunkClient().generate_unique_key()
+
+        # Set the short URL association
+        self.redis.hset(short_url, "long_url", long_url)
+        self.redis.hset(short_url, "time_created", int(time.time()))
+        if netid is not None:
+            self.redis.hset(short_url, "netid", netid)
+
+        # Set the NetID association
+        if netid is not None:
+            self.redis.sadd(netid, short_url)
+
+        # Set the visits database
+        # TODO
+
+        # Set the clicks database
+        self.redis.set("foo", 0)
+
 
     def get_long_url(self, short_url):
         """Given a short URL, returns the long URL. """
