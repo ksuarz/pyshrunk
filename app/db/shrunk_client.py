@@ -46,6 +46,19 @@ class ShrunkClient(object):
         # Set the clicks database
         self.redis.set("foo", 0)
 
+    def get_url_info(self, short_url):
+        """Given a short URL, return information about it.
+
+        This returns a dictionary containing the following fields:
+          - long_url : The original unshrunk URL
+          - time_created: The time the URL was created, expressed as seconds
+            since the Unix epoch
+          - netid : If it exists, the creator of the shortened URL
+
+        :Parameters:
+          - `short_url`: A shortened URL.
+        """
+        return self.redis.hgetall(short_url)
 
     def get_long_url(self, short_url):
         """Given a short URL, returns the long URL. """
