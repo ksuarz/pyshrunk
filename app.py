@@ -14,14 +14,23 @@ def login():
 
 @app.route('/u')
 def home():
-    # fetch links here
     return render_template('main.html')
 
 @app.route('/g')
 def group():
-    # return render_template('group.html')
     pass
 
+@app.route('/<hash>')
+def route_to_link(hash):
+    pass
+
+@app.route('/l/<hash>')
+def link_info(hash):
+    pass
+
+@app.route('/b/<hash>')
+def bundle(hash):
+    pass
 
 """ 
     need a route for the /shorturl
