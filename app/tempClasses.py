@@ -39,8 +39,7 @@ class FakeDB(dict):
 	def isadmin(self, netid):
 		return netid in self['users'] and self['users'][netid]['privlevel'] == 'admin'
 	def getByPrefix(self, netid, prefix):
-		result  = {key : val for key,val in self['urls'].iteritems() if str(val).startswith(prefix) and key in self['users'][netid]['keys']}
-		return result
+		return {key : val for key,val in self['urls'].iteritems() if str(val).startswith(prefix) and key in self['users'][netid]['keys']}
 	def getAll(self):
 		return self['urls']
 	def getowner(self, key):
