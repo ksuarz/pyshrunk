@@ -2,6 +2,9 @@
 
 Implements database-level interactions for the shrunk application.
 """
+import time
+
+import redis
 
 
 class ShrunkClient(object):
@@ -70,8 +73,17 @@ class ShrunkClient(object):
 
     def get_num_visits(self, short_url):
         """Given a short URL, return the number of visits."""
-        raise NotImplementedError
+        self.redis.get(short_url)
 
     def get_urls(self, netid):
         """Gets all the URLs created by the given NetID."""
+        self.redis.smembers(netid)
+
+    def visit(self, short_url):
+        """Visits the given URL and logs visit information."""
+        raise NotImplementedError
+
+    @staticmethod
+    def generate_unique_key():
+        """Generates a unique key in the database."""
         raise NotImplementedError
