@@ -66,10 +66,18 @@ class ShrunkClient(object):
           - `short_url`: The shortened URL to dete.
 
         :Returns:
-          True if the deletion occurred successfully; false otherwise. If there
-          was no such record in the database, false is returned.
+          A response in JSON detailing the effect of the database operations.
         """
-        pass
+        url_collection = self._mongo.shrunk_urls
+        visit_collection = self._mongo.shrunk_visits
+        return {
+            "urlDataResponse" : url_collection.urls.remove({
+                "id" : short_url
+            }),
+            "visitDataResponse" : visit_collection.visits.remove({
+                "url" : short_url
+            })
+        }
 
 
     def delete_user_urls(self, netid):
@@ -79,8 +87,10 @@ class ShrunkClient(object):
           - `netid`: The NetID of the URLs to delete.
         
         :Returns:
-          An integer indicating the number of deleted URLs.
+          A response in JSON detailing the effect of the database operations.
         """
+        url_collection = self.mongo.shrunk_urls
+        # TODO
         pass
 
     def get_url_info(self, short_url):
